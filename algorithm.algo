@@ -1,0 +1,26 @@
+ALGORITHM sentence
+VAR
+    sentence = STRING;
+    word_counter , vowels_counter , char_counter : INTEGER ;
+BEGIN
+    write ('give me sentence:') 
+    read (sentence)
+    //number of characters
+        char_counter = sentence.length;
+    //number of words and vowels
+    word_counter := 1;
+    vowels_counter := 0;    
+    FOR i FROM 0 TO sentence.length - 1 STEP 1  DO
+    //number of words 
+        IF (sentence[i] = ' ') THEN
+        word_counter = word_counter + 1;
+        END_IF
+    //number of vowels
+        IF (sentence[i].toLowerCase in ['a','e','i','u','o']) THEN
+        vowels_counter = vowels_counter + 1;
+        END_IF
+    END_FOR
+    write ('the number of characters : ' , char_counter)
+    write ('the number of words : ' , word_counter)
+    write ('the number of vowels : ' , vowels_counter)
+END
